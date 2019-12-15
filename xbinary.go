@@ -39,6 +39,7 @@ func (x *XBinary) getSum() ([]byte, error) {
 		x.l.RUnlock()
 		return x.sum, x.err
 	}
+	x.l.RUnlock()
 
 	x.l.Lock()
 	if x.ready {
